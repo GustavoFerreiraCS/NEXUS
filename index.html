@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXO Store — Loja Interativa</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">NEXO<span>.</span></div>
+            <nav class="nav">
+                <a href="#" class="nav-link active" data-cat="todos">Todos</a>
+                <a href="#" class="nav-link" data-cat="eletronicos">Eletrônicos</a>
+                <a href="#" class="nav-link" data-cat="moda">Moda</a>
+                <a href="#" class="nav-link" data-cat="casa">Casa</a>
+                <a href="#" class="nav-link" data-cat="esporte">Esporte</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-wrap">
+                    <input type="text" id="searchInput" placeholder="Buscar produto…" />
+                    <span class="search-icon">⌕</span>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Nova coleção 2026</p>
+            <h1 class="hero-title">Compre o<br /><em>que você<br />merece.</em></h1>
+            <p class="hero-sub">Produtos selecionados, entrega rápida e preço justo.</p>
+            <a href="#produtos" class="hero-cta">Explorar loja ↓</a>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-blob"></div>
+            <div class="hero-card floating">
+                <span class="hero-card-icon">⚡</span>
+                <span>Frete grátis acima de R$199</span>
+            </div>
+            <div class="hero-card floating delay1">
+                <span class="hero-card-icon">🔒</span>
+                <span>Compra 100% segura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="categories-bar" id="categorias">
+        <button class="cat-pill active" data-cat="todos">🏷️ Todos</button>
+        <button class="cat-pill" data-cat="eletronicos">⚡ Eletrônicos</button>
+        <button class="cat-pill" data-cat="moda">👕 Moda</button>
+        <button class="cat-pill" data-cat="casa">🏠 Casa</button>
+        <button class="cat-pill" data-cat="esporte">🏋️ Esporte</button>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos-section" id="produtos">
+        <div class="section-header">
+            <h2 class="section-title">Produtos</h2>
+            <div class="sort-wrap">
+                <label>Ordenar:</label>
+                <select id="sortSelect">
+                    <option value="default">Padrão</option>
+                    <option value="preco-asc">Menor preço</option>
+                    <option value="preco-desc">Maior preço</option>
+                    <option value="nome">Nome A–Z</option>
+                </select>
+            </div>
+        </div>
+        <div class="produtos-grid" id="produtosGrid"></div>
+        <p class="empty-msg" id="emptyMsg" style="display:none">Nenhum produto encontrado.</p>
+    </section>
+
+    <!-- CARRINHO LATERAL -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Finalizar Compra →</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- MODAL PRODUTO -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 NEXO Store — Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
